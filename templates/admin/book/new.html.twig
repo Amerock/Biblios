@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout de Livres{% endblock %}
+
+{% block body %}
+<section class="container px-4">
+    <div class="w-50 m-auto">
+        <h1>Ajout de Livres</h1>
+
+        {{ form_start(form) }}
+        {{ form_row(form.Titre, {label: 'Titre'}) }}
+        {{ form_row(form.isbn, {label: 'isbn'}) }}
+        {{ form_row(form.couverture, {label: 'couverture (lien URL)'}) }}
+        {{ form_row(form.DateEdition, {label: 'Date d`\'édition'}) }}
+        {{ form_row(form.resume, {label: 'Résumé'}) }}
+        {{ form_row(form.nbpages, {label: 'nombres de pages'}) }}
+        {{ form_row(form.status, {label: 'Status'}) }}
+        {{ form_row(form.editeur, {label: 'Editeur'}) }}
+        {{ form_row(form.auteur, {label: 'Auteur'}) }}
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+</section>
+{% endblock %}
