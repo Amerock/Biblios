@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demande d'inscription{% endblock %}
+
+{% block body %}
+  <style>
+        label.required:before {
+            content: "* ";
+        }
+    </style>
+
+<section id="about">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-5">
+                <br><br><br>
+     <h2>Demande d'inscription</h2>
+ <span class="text-muted"><small>*: champ requis</small></span>
+  
+    {{ form_errors(InscriptionForm) }}
+
+    {{ form_start(InscriptionForm) }}
+        {{ form_row(InscriptionForm.firstname, {label: 'Prénom'}) }}
+        {{ form_row(InscriptionForm.lastname, {label: 'Nom'}) }}
+        {{ form_row(InscriptionForm.username, {label: 'Nom d\'utilisateur'}) }}
+        {{ form_row(InscriptionForm.email) }}
+        {{ form_row(InscriptionForm.roles, {label: 'Rôles'}) }}
+        {{ form_row(InscriptionForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        
+
+       <button type="submit" class="btn btn-outline-primary">Envoyé</button>
+    {{ form_end(InscriptionForm) }}
+{% endblock %}

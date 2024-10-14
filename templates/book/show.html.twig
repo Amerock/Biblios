@@ -16,7 +16,7 @@
                         <span>Auteur(s): {{ book.Auteur|map(a => a.name)|join(', ') }}</span>
                     </div>
                     <div class="fs-5">
-                        <span>Éditeur: {{ book.Editeur|map(a => a.name)|join(', ') }}</span>
+                         <span>Éditeur: {{ book.Editeur.nom }}</span> 
                     </div>
                     <div class="fs-5">
                         <span>{{ book.nbpages }}{{ book.nbpages is not null ? ' pages' }}</span>
